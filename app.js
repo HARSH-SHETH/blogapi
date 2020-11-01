@@ -3,14 +3,14 @@ const app = express();
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 
-// mongoose configuration
+// MONGOOSE CONFIGURATION
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: true
 });
 
-const db = mongoose.connection; // return mongoose connection instance
+const db = mongoose.connection; // RETURN MONGOOSE CONNECTION INSTANCE
 db.on('error', function(err){
   if(err){
     console.log("mongoose connection error!!!");
